@@ -1,0 +1,29 @@
+# Memory Maintenance 配置示例
+# 将此文件保存为 ~/.openclaw/workspace/skills/memory-maintenance/config.yaml
+
+# 记忆目录配置
+memory_dir: "~/.openclaw/workspace/memory"
+backup_dir: "backups"
+archive_dir: "archived"
+
+# 归档策略
+archive_after_days: 30  # 30天无访问的记忆自动归档
+
+# 去重配置
+dedup_similarity_threshold: 0.85  # 相似度阈值（0.0-1.0）
+
+# 维护频率（cron 表达式）
+# 每天凌晨 2:00 执行
+# schedule: "0 2 * * *"
+schedule: ""
+
+# 报告配置
+report:
+  format: html  # "html" 或 "json"
+  output_dir: "."
+
+# 通知配置
+notify:
+  enabled: false
+  method: "local"  # "local" 或 "webhook"
+  webhook_url: ""
